@@ -23,5 +23,18 @@ function findDuplicates(inputAsString){
 }
 
 function dnaStrand(inputAsString){
-
+    const pairs = {
+        'A':'T',
+        'T':'A',
+        'G':'C',
+        'C':'G'
+    };
+    
+    let dnaMainArr = inputAsString
+    .split('')
+    .map(element => pairs[element]);
+    
+    return dnaMainArr.join('')
 }
+
+console.log(dnaStrand('ATTGC'));
