@@ -36,11 +36,11 @@ function dnaStrand(inputAsString){
 
 function sortString(inputAsString){
     
-    let sortedStrs = inputAsString
+    let strs = inputAsString
     .split(' ')
     .sort((a,b)=>a.length - b.length);
     
-    return sortedStrs[0].length;
+    return strs[0].length;
 }
 
 function orderTask(inputAsString){
