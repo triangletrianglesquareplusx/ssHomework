@@ -17,9 +17,6 @@ function findDuplicates(inputAsString){
     .length;
     
     //second attempt at solution
-    
-    
-    
 }
 
 function dnaStrand(inputAsString){
@@ -45,4 +42,53 @@ function sortString(inputAsString){
     
     return sortedStrs[0].length;
 }
+
+function orderTask(inputAsString){
+    
+    //first attempt
+    function findDigit(word){
+        let myRegex = /[0-9]/;
+        return Number(myRegex.exec(word)[0]);
+    }
+
+    let result = ''
+    if(inputAsString === ''){
+        return result;
+        
+    }else{
+        let myObjs = inputAsString
+        .split(' ')
+        .map(word=>({
+            'name': word,
+            'value': findDigit(word)
+        }));
+        
+        let mySortedSentence = myObjs
+        .sort((a,b)=>a.value-b.value);
+        
+        let result = '';
+        for (const word of mySortedSentence) {
+            result += `${word.name} `;
+        }
+
+        return result;
+    }
+
+    //second attempt
+    let myResult = '';
+
+    if(inputAsString === ''){
+        return myResult;
+    }else{
+        myResult = inputAsString
+        .split(' ')
+        .sort((a,b)=> findDigit(a) - findDigit(b))
+        .join(' ');
+
+        return myResult;
+    }
+    
+}
+
+
 
