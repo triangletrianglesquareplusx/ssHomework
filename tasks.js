@@ -37,4 +37,12 @@ function dnaStrand(inputAsString){
     return dnaMainArr.join('')
 }
 
-console.log(dnaStrand('ATTGC'));
+function sortString(inputAsString){
+    
+    let sortedStrs = inputAsString
+    .split(' ')
+    .sort((a,b)=>a.length - b.length);
+    
+    return sortedStrs[0].length;
+}
+
