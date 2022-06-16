@@ -75,19 +75,24 @@ function orderTask(inputAsString){
     }
 
     //second attempt
-    let myResult = '';
+    // let myResult = '';
 
-    if(inputAsString === ''){
-        return myResult;
-    }else{
-        myResult = inputAsString
-        .split(' ')
-        .sort((a,b)=> findDigit(a) - findDigit(b))
-        .join(' ');
+    // if(inputAsString === ''){
+    //     return myResult;
+    // }else{
+    //     myResult = inputAsString
+    //     .split(' ')
+    //     .sort((a,b)=> findDigit(a) - findDigit(b))
+    //     .join(' ');
 
-        return myResult;
-    }
+    //     return myResult;
+    // }
     
+    //better phrasing
+    return inputAsString === '' ? myResult : inputAsString
+    .split(' ')
+    .sort((a,b)=> findDigit(a) - findDigit(b))
+    .join(' ');
 }
 
 
